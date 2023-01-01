@@ -53,7 +53,12 @@ export default {
   },
 
   image: {
-    domains: ['https://dijitaluzmaniniz.com'],
+    format: 'webp',
+    domains: ['dijitaluzmaniniz.com'],
+    /*    alias: {
+          unsplash: 'https://dijitaluzmaniniz.com'
+        },*/
+    provider: 'ipx'
   },
 
   elementUI: {
