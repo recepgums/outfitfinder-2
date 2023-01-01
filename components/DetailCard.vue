@@ -70,7 +70,7 @@
         <div class="row">
           <div class="col-sm-12">
             <nuxt-img
-              format="webp"
+                format="webp"
                 style="border-top-left-radius:20px;border-top-right-radius:20px"
                 sizes="sm:60vw md:60vw lg:600px"
                 :fit="'fill'"
