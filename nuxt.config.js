@@ -53,17 +53,7 @@ export default {
   },
 
   image: {
-    format: 'webp',
-    domains: ['dijitaluzmaniniz.com'],
-    /*    alias: {
-          unsplash: 'https://dijitaluzmaniniz.com'
-        },*/
-/*    provider: 'custom_ipx',
-    providers: {
-      custom_ipx: {
-        provider: '~/providers/custom',
-      }
-    }*/
+    domains: ['dijitaluzmaniniz.com']
   },
 
   elementUI: {
@@ -73,7 +63,6 @@ export default {
     ]
   },
   axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: 'https://dijitaluzmaniniz.com/api/'
   }
 

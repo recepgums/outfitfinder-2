@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template class="bg-gray">
-  <div>
+  <div>aaa
     <div class="d-md-none d-sm-block container">
       <div class="row">
         <div class="col-sm-4" v-for="(spot, i) in spots" :key="spot.id">
