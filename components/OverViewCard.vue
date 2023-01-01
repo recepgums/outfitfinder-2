@@ -1,10 +1,11 @@
 <template>
-  <el-card v-if="spot" :body-style="{ padding: '0px' }">
+  <el-card v-if="spot" :body-style="{ padding: '0px',borderRadius:'30px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
       <nuxt-img
           format="webp"
           sizes="sm:50vw md:50vw lg:400px"
           width="400"
+          height="500"
           :fit="'fill'"
           :alt="spot.title"
           :src="spot.cover_image_link"
@@ -15,7 +16,7 @@
       <NuxtLink :to="`/spot/${spot.slug}`">
         <div class="text-bold">{{ spot.title }}</div>
       </NuxtLink>
-      <p v-html="spot.description"></p>
+      <p class="spot-description" v-html="spot.description"></p>
 
       <div class="row">
         <div class="col-sm-3" v-for="product in spot.products" :key="product.id">
@@ -67,3 +68,13 @@ export default {
 }
 
 </script>
+<style>
+.spot-description{
+  display: -webkit-box;
+  max-width: 400px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

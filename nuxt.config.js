@@ -53,7 +53,7 @@ export default {
   },
 
   image: {
-    domains: ['dijitaluzmaniniz.com']
+    domains: ['https://dijitaluzmaniniz.com']
   },
 
   elementUI: {
