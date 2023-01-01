@@ -58,7 +58,12 @@ export default {
     /*    alias: {
           unsplash: 'https://dijitaluzmaniniz.com'
         },*/
-    provider: 'ipx'
+/*    provider: 'custom_ipx',
+    providers: {
+      custom_ipx: {
+        provider: '~/providers/custom',
+      }
+    }*/
   },
 
   elementUI: {
