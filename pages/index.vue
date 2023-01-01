@@ -21,7 +21,21 @@
 import OverViewCard from "../components/OverViewCard";
 
 export default {
-  head: {
+  head() {
+    return {
+      title: 'Closet Finder',
+      meta: [
+        {charset: 'utf-8'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Find the celebrities outfits. ${this.spots}`
+        }
+      ],
+    }
+  },
+/*  head: {
     title: 'Closet Finder',
     meta: [
       {charset: 'utf-8'},
@@ -29,10 +43,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Find the celebrities outfits.'
+        content: `Find the celebrities outfits.`
       }
     ],
-  },
+  },*/
   components: {
     OverViewCard
   },

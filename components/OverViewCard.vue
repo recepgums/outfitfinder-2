@@ -21,6 +21,7 @@
         <div class="col-sm-3" v-for="product in spot.products" :key="product.id">
           <NuxtLink style="color:#000;" :to="product.affiliate_link">
             <nuxt-img
+              provider="ipx"
               format="webp"
               sizes="sm:5vw md:5vw lg:40px"
               width="100"
