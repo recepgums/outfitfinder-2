@@ -5,6 +5,7 @@
         <div class="row p-0">
           <div class="col-md-6 col-sm- p-0">
             <nuxt-img
+              format="webp"
                 style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
                 sizes="sm:100vw md:50vw lg:400px"
                 class="figure-img img-fluid card-img-top shadow m-0"
@@ -36,6 +37,7 @@
                           target="_blank"
                       >
                         <nuxt-img
+                          format="webp"
                             sizes="sm:20vw md:30vw lg:200px"
                             width="100"
                             height="150"
@@ -68,6 +70,7 @@
         <div class="row">
           <div class="col-sm-12">
             <nuxt-img
+              format="webp"
                 style="border-top-left-radius:20px;border-top-right-radius:20px"
                 sizes="sm:60vw md:60vw lg:600px"
                 :fit="'fill'"
@@ -96,6 +99,7 @@
                           target="_blank"
                       >
                         <nuxt-img
+                          format="webp"
                             sizes="sm:70vw md:70vw lg:600px"
                             style="height: 12vh"
                             class="w-full"
