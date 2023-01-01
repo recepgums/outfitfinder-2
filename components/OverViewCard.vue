@@ -18,21 +18,21 @@
       <p v-html="spot.description"></p>
 
       <div class="row">
-        <NuxtLink style="color:#000;"
-                  :to="product.affiliate_link"
-                  v-for="product in spot.products"
-                  :key="product.id">
-          <nuxt-img
+        <div class="col-sm-3" v-for="product in spot.products" :key="product.id">
+          <NuxtLink style="color:#000;" :to="product.affiliate_link">
+            <nuxt-img
               format="webp"
               sizes="sm:5vw md:5vw lg:40px"
+              width="100"
               class="w-full"
               :src="product?.image_link"
               :alt="spot?.title"
-          />
-          <p>
-            {{ product.name }}{{ product.price }}{{ product.currency }}
-          </p>
-        </NuxtLink>
+            />
+            <p>
+              {{ product.name }}{{ product.price }}{{ product.currency }}
+            </p>
+          </NuxtLink>
+        </div>
       </div>
     </div>
     <div class="px-6 py-4">
