@@ -12,7 +12,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css' },
+      { crossorigin:"anonymous", rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' }
     ]
   },
 
@@ -31,22 +33,53 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-element-ui',
+    '@nuxt/image'
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
-  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: [/^element-ui/],
+    transpile: [/^element-ui/]
+  },
+  googleAnalytics: {
+    id: 'G-22417X0359'
+  },
+
+  image: {
+    format: 'webp',
+    domains: ['dijitaluzmaniniz.com'],
+    /*    alias: {
+          unsplash: 'https://dijitaluzmaniniz.com'
+        },*/
+    provider: 'customProvider',
+    providers: {
+      customProvider: {
+        name: 'customProvider', // optional value to overrider providers name
+        provider: '~/providers/custom',
+        options: {
+          baseURL: '',
+          format: 'webp'
+        }
+      }
+    }
+  },
+
+  elementUI: {
+    components: [
+      'Button', 'DatePicker', 'Carousel', 'CarouselItem',
+      'Col','Row','Card','Image'
+    ]
+  },
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: 'https://dijitaluzmaniniz.com/api/'
   }
+
 }
