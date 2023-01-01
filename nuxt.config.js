@@ -54,21 +54,7 @@ export default {
 
   image: {
     format: 'webp',
-    domains: ['dijitaluzmaniniz.com'],
-    /*    alias: {
-          unsplash: 'https://dijitaluzmaniniz.com'
-        },*/
-    provider: 'customProvider',
-    providers: {
-      customProvider: {
-        name: 'customProvider', // optional value to overrider providers name
-        provider: '~/providers/custom',
-        options: {
-          baseURL: '',
-          format: 'webp'
-        }
-      }
-    }
+    domains: ['https://dijitaluzmaniniz.com']
   },
 
   elementUI: {
