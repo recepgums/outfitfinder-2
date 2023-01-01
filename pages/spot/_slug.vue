@@ -5,7 +5,7 @@
       <div ref="swiper" class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <DetailCard :spot="spot"></DetailCard>
+            <DetailCard v-if="spot" :spot="spot"></DetailCard>
           </div>
           <div class="swiper-slide"></div>
         </div>
@@ -37,7 +37,6 @@ export default {
   mounted() {
     new Swiper(this.$refs.swiper, {
       modules: [Navigation, Pagination, Autoplay],
-      direction: 'vertical',
       slidesPerView:'1.5',
       on: {
         slideChange: (swiper) => {

@@ -34,18 +34,18 @@ export default {
       ],
     }
   },
-/*  head: {
-    title: 'Closet Finder',
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {
-        hid: 'description',
-        name: 'description',
-        content: `Find the celebrities outfits.`
-      }
-    ],
-  },*/
+  /*  head: {
+      title: 'Closet Finder',
+      meta: [
+        {charset: 'utf-8'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Find the celebrities outfits.`
+        }
+      ],
+    },*/
   components: {
     OverViewCard
   },
@@ -67,3 +67,18 @@ export default {
 }
 
 </script>
+<style scoped>
+@media screen and (min-width: 1400px) {
+  .el-card {
+    background-color: red;
+    max-height: 500px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .el-card {
+    background-color: blue;
+    max-height: 500px;
+  }
+}
+</style>
