@@ -24,6 +24,7 @@ export default {
   name: 'SpotDetail',
   async asyncData({$axios,params}){
     const spot = await $axios.get(`${$axios.defaults.baseURL}spot/${params.slug}`).then(resp =>resp.data.data)
+    console.log(spot)
     return {spot:spot}
   },
   data() {

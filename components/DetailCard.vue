@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid p-0 mx-auto">
-    <div class="d-none d-md-block p-0 ">
-      <el-card v-if="spot" style="border-radius: 30px;max-width: 70vw;" :body-style="{padding: '0px'}">
+  <div class="container-fluid p-0">
+    <div class="d-none d-md-block p-0 mx-auto">
+      <el-card v-if="spot" style="border-radius: 30px;max-width: 60vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm- p-0">
             <nuxt-img
@@ -25,37 +25,31 @@
               <p v-html="spot?.description"></p>
             </div>
 
-            <div class="px-2">
+            <div class="px-2" style="position:relative;top: 50px">
               <div class="row">
-                <div ref="productSwipesr" class="swiper">
+                <div ref="productSwiper" class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
-                      <a
-                          style="color:#000;"
-                          :key="product?.id"
-                          :href="product?.affiliate_link"
-                          target="_blank"
-                      >
-                        <nuxt-img
-                          format="webp"
-                            sizes="sm:20vw md:30vw lg:200px"
-                            width="100"
-                            height="150"
-                            :fit="'fill'"
-                            :src="product?.image_link"
-                            :alt="spot?.title"
-                        />
-                        <p>
-                          {{ product.name }}{{ product.price }}{{ product.currency }}
-                        </p>
-                      </a>
+                      <ProductCard :product="product"/>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-12 text-right">
+            <div class="px-2" style="position:relative;top: 50px">
+              <div class="row">
+                <div ref="productSwiper" class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
+                      <ProductCard :product="product"/>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 text-right pr-5" style="position:absolute;bottom: 50px">
               <span class="badge mr-2" style="color: deeppink">#{{ spot?.category?.name }}</span>
               <span class="badge mr-2" style="color: deeppink">#{{ spot?.celebrity?.name }}</span>
             </div>
@@ -157,7 +151,7 @@ export default {
       slidesPerView: '1.5',
     })
 
-    new Swiper(this.$refs.productSwiper, {
+    new Swiper(this.$refs.productSwipe22r, {
       modules: [Navigation, Pagination, Autoplay],
       spaceBetween: -10,
       slidesPerGroup: 1,

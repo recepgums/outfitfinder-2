@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template class="bg-gray">
-  <div>aaa
+  <div>
     <div class="d-md-none d-sm-block container">
       <div class="row">
         <div class="col-sm-4" v-for="(spot, i) in spots" :key="spot.id">
@@ -8,7 +8,6 @@
         </div>
       </div>
     </div>
-
     <div class="row d-none d-md-flex">
       <div class="col-sm-4 mt-2" v-for="(spot, i) in spots" :key="spot.id">
         <OverViewCard :spot="spot"></OverViewCard>
