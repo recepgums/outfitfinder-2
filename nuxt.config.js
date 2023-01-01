@@ -54,17 +54,6 @@ export default {
 
   image: {
     domains: ['https://dijitaluzmaniniz.com'],
-    provider: 'customProvider',
-    providers: {
-      customProvider: {
-        name: 'customProvider', // optional value to overrider providers name
-        provider: '~/providers/custom',
-        options: {
-          baseURL: '',
-          format: 'webp'
-        }
-      }
-    }
   },
 
   elementUI: {
