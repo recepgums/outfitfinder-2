@@ -83,7 +83,7 @@
             </div>
             <div class="px-2">
               <div class="slider">
-                <div ref="swiper22d" class="swiper">
+                <div ref="swiper22" class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
                       <a
@@ -151,7 +151,7 @@ export default {
       slidesPerView: '1.5',
     })
 
-    new Swiper(this.$refs.productSwipe22r, {
+    new Swiper(this.$refs.productSwiper, {
       modules: [Navigation, Pagination, Autoplay],
       spaceBetween: -10,
       slidesPerGroup: 1,

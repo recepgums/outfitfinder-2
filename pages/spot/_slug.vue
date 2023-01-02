@@ -40,6 +40,7 @@ export default {
       slidesPerView:'1.5',
       on: {
         slideChange: (swiper) => {
+          alert('a')
           let nextSpot = this.spots[Math.floor(Math.random()*this.spots.length)];
           while (this.$router.currentRoute.fullPath === nextSpot){
             nextSpot = this.spots[Math.floor(Math.random()*this.spots.length)];
@@ -58,3 +59,4 @@ export default {
   },
 }
 </script>
+
