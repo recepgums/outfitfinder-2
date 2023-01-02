@@ -58,7 +58,8 @@ export default {
   },
   robots: {
     UserAgent: '*',
-    Disallow: ''
+    Disallow: '',
+    Sitemap: () => `https://closetfinder.com/sitemap.xml`
   },
 
   sitemap: {
