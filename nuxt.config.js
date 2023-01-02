@@ -57,6 +57,7 @@ export default {
   },
 
   sitemap: {
+    path:'sitemap.xml',
     hostname: 'https://closetfinder.com',
     gzip: true,
     routes: [
