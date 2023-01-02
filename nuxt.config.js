@@ -43,6 +43,7 @@ export default {
     '@nuxtjs/axios',
     'nuxt-element-ui',
     '@nuxt/image',
+    '@nuxtjs/robots',
 
 
     '@nuxtjs/sitemap'
@@ -54,6 +55,10 @@ export default {
   },
   googleAnalytics: {
     id: 'G-22417X0359'
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: ''
   },
 
   sitemap: {
