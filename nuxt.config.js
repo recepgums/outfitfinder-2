@@ -33,8 +33,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -54,7 +53,12 @@ export default {
   },
 
   image: {
-    domains: ['https://dijitaluzmaniniz.com']
+    format: 'webp',
+    domains: ['dijitaluzmaniniz.com'],
+    /*    alias: {
+          unsplash: 'https://dijitaluzmaniniz.com'
+        },*/
+    provider: 'ipx'
   },
 
   elementUI: {
@@ -64,18 +68,8 @@ export default {
     ]
   },
   axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: 'https://dijitaluzmaniniz.com/api/'
-  },
-  ogleFonts: {
-    families: {
-      Roboto: true,
-      'Josefin+Sans': true,
-      Lato: [100, 300],
-      Raleway: {
-        wght: [100, 400],
-        ital: [100]
-      }
-    }
   }
 
 }

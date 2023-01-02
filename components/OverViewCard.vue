@@ -1,7 +1,7 @@
 <template>
   <el-card v-if="spot" style="border-radius: 20px" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'650px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
-      <nuxt-img
+      <el-image
         format="webp"
         sizes="sm:50vw md:50vw lg:400px"
         style="object-fit: contain;"

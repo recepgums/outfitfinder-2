@@ -4,7 +4,7 @@
       <el-card v-if="spot" style="border-radius: 30px;max-width: 60vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm- p-0">
-            <nuxt-img
+            <el-image
               format="webp"
                 style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
                 sizes="sm:100vw md:50vw lg:400px"
@@ -63,7 +63,7 @@
       <el-card v-if="spot" class="mx-2"  style="border-radius: 30px" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
-            <nuxt-img
+            <el-image
                 format="webp"
                 style="border-top-left-radius:20px;border-top-right-radius:20px"
                 sizes="sm:60vw md:60vw lg:600px"
@@ -92,7 +92,7 @@
                           :href="product?.affiliate_link"
                           target="_blank"
                       >
-                        <nuxt-img
+                        <el-image
                           format="webp"
                             sizes="sm:70vw md:70vw lg:600px"
                             style="height: 12vh"

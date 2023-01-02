@@ -68,17 +68,24 @@ export default {
 
 </script>
 <style scoped>
+@media only screen and (max-width: 600px) {
+  .el-card {
+    max-height: 420px;
+    margin: 10px 0;
+    background-color: green;
+  }
+}
 @media screen and (min-width: 1400px) {
   .el-card {
+    max-height: 70vh;
     background-color: red;
-    max-height: 500px;
   }
 }
 
 @media screen and (min-width: 1600px) {
   .el-card {
     background-color: blue;
-    max-height: 500px;
+    max-height: 450px;
   }
 }
 </style>

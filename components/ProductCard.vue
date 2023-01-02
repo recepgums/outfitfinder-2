@@ -2,7 +2,7 @@
   <div>
     <a style="color:#000;" target="_blank" :href="product.affiliate_link">
       <el-card :body-style="{ padding: '0px'}">
-        <nuxt-img
+        <el-image
           provider="ipx"
           format="webp"
           style="object-fit: contain;width: 100px"

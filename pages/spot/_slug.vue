@@ -5,7 +5,7 @@
       <div ref="swiper" class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <DetailCard v-if="spot" :spot="spot"></DetailCard>
+            <DetailCard :spot="spot"></DetailCard>
           </div>
           <div class="swiper-slide"></div>
         </div>
