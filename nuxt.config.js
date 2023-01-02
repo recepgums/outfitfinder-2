@@ -42,7 +42,10 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-element-ui',
-    '@nuxt/image'
+    '@nuxt/image',
+
+
+    '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -51,6 +54,21 @@ export default {
   },
   googleAnalytics: {
     id: 'G-22417X0359'
+  },
+
+  sitemap: {
+    hostname: 'https://closetfinder.com',
+    gzip: true,
+    routes: [
+      '/',
+      '/spot/2',
+      {
+        url: '/page/3',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: '2017-06-30T13:30:00.000Z'
+      }
+    ]
   },
 
   image: {
