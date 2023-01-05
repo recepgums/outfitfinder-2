@@ -8,6 +8,7 @@
         </div>
       </div>
     </div>
+
     <div class="row d-none d-md-flex">
       <div class="col-sm-4 mt-2" v-for="(spot, i) in spots" :key="spot.id">
         <OverViewCard :spot="spot"></OverViewCard>
@@ -22,30 +23,18 @@ import OverViewCard from "../components/OverViewCard";
 export default {
   head() {
     return {
-      title: 'Closet Finder',
+      title: this.seo.title,
       meta: [
         {charset: 'utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},
         {
           hid: 'description',
           name: 'description',
-          content: `Find the celebrities outfits. ${this.spots}`
+          content: this.seo.description
         }
       ],
     }
   },
-  /*  head: {
-      title: 'Closet Finder',
-      meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-        {
-          hid: 'description',
-          name: 'description',
-          content: `Find the celebrities outfits.`
-        }
-      ],
-    },*/
   components: {
     OverViewCard
   },
@@ -59,7 +48,8 @@ export default {
   async asyncData({$axios}) {
     try {
       const spots = await $axios.get(`${$axios.defaults.baseURL}spot`).then(resp => resp.data.data)
-      return {spots}
+      const seo = await $axios.get(`${$axios.defaults.baseURL}seo/home`).then(resp => resp.data)
+      return {spots:spots,seo:seo}
     } catch (error) {
       console.log(error)
     }
@@ -75,9 +65,9 @@ export default {
     background-color: green;
   }
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1130px) {
   .el-card {
-    max-height: 70vh;
+    max-height: 450px;
     background-color: red;
   }
 }
@@ -85,7 +75,7 @@ export default {
 @media screen and (min-width: 1600px) {
   .el-card {
     background-color: blue;
-    max-height: 450px;
+    max-height: 500px;
   }
 }
 </style>
