@@ -60,20 +60,21 @@ export default {
 }
 .div-over-image-bottom{
   position: absolute;
-  left: 0;
-  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  bottom: 10px;
   z-index: 3;
-  padding: 5px 30px;
+  padding: 5px 10px;
   display: block;
-  width: 80%;
   font-size: 1rem;
+  width: 20px;
   height: 25%;
+  min-width: 90%;
   color: #FFFFFF!important;
-  font-weight: bold;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  line-height: normal;
 }
 .invert {
   background-color: white;

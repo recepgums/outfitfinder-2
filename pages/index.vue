@@ -62,19 +62,19 @@ export default {
   .el-card {
     max-height: 420px;
     margin: 10px 0;
-    background-color: green;
+    /*background-color: green;*/
   }
 }
 @media screen and (min-width: 1130px) {
   .el-card {
     max-height: 450px;
-    background-color: red;
+    /*background-color: red;*/
   }
 }
 
 @media screen and (min-width: 1600px) {
   .el-card {
-    background-color: blue;
+    /*background-color: blue;*/
     max-height: 500px;
   }
 }
