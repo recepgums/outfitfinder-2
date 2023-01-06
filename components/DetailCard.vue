@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid p-0">
-    <div class="d-none d-md-block p-0 mx-auto">
-      <el-card v-if="spot" style="border-radius: 30px;max-width: 60vw;" :body-style="{padding: '0px'}">
+  <div class="container-md p-0">
+    <div class="d-none d-md-block p-0">
+      <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
             <el-image
@@ -31,8 +31,8 @@
               </div>
             </div>
             <div class="col-12 text-right pr-5" style="position:absolute;bottom: 50px">
-              <span class="badge mr-2" style="color: deeppink">#{{ spot?.category?.name }}</span>
-              <span class="badge mr-2" style="color: deeppink">#{{ spot?.celebrity?.name }}</span>
+              <el-tag type="danger" >#{{ spot?.category?.name }}</el-tag>
+              <el-tag type="danger" >#{{ spot?.celebrity?.name }}</el-tag>
             </div>
           </div>
         </div>
@@ -63,6 +63,7 @@
               <p v-html="spot?.description"></p>
             </div>
             <div class="px-2">
+              <client-only>
                     <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
                       <a
                           style="color:#000;"
@@ -83,6 +84,7 @@
                         </p>
                       </a>
                   </div>
+              </client-only>
             </div>
             <div class="col-12 text-right">
               <span class="badge mr-2" style="color: deeppink">#{{ spot?.category?.name }}</span>
@@ -101,17 +103,6 @@ import Swiper, {Navigation, Pagination, Autoplay} from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
-
-  head: {
-    title: 'Home page',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Home page description'
-      }
-    ],
-  },
   name: 'OverViewCard',
   props: ['spot'],
   data() {

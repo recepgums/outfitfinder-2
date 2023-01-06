@@ -1,20 +1,19 @@
 <!-- Please remove this file from your project -->
-<template class="bg-gray">
+<template>
   <div>
-    <div class="d-md-none d-sm-block container">
+    <div class="d-md-none d-sm-block container-md">
       <div class="row">
-        <div class="col-sm-4" v-for="(spot, i) in spots" :key="spot.id">
+        <div class="col-12" v-for="(spot, i) in spots" :key="spot.id">
           <OverViewCard :spot="spot"></OverViewCard>
         </div>
       </div>
     </div>
 
-    <div class="row d-none d-md-flex">
-      <div class="col-sm-4 mt-2" v-for="(spot, i) in spots" :key="spot.id">
-        <OverViewCard :spot="spot"></OverViewCard>
+    <div class="d-none d-md-block ">
+      <div class="row">
+        <OverViewCard class="col-sm-4 col-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -50,7 +49,7 @@ export default {
     try {
       const spots = await $axios.get(`${$axios.defaults.baseURL}spot`).then(resp => resp.data.data)
       const seo = await $axios.get(`${$axios.defaults.baseURL}seo/home`).then(resp => resp.data)
-      return {spots:spots,seo:seo}
+      return {spots: spots, seo: seo}
     } catch (error) {
       console.log(error)
     }
@@ -66,6 +65,7 @@ export default {
     /*background-color: green;*/
   }
 }
+
 @media screen and (min-width: 1130px) {
   .el-card {
     max-height: 450px;

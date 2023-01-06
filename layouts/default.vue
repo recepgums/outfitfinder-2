@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-md">
     <nav class="navbar navbar-expand-lg navbar-light">
       <NuxtLink class="navbar-brand" to="/">
         <h3 class="text-center">

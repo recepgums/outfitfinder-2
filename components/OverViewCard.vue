@@ -1,8 +1,8 @@
 <template>
-  <el-card v-if="spot" style="border-radius: 20px" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'400px' }">
+  <el-card v-if="spot" style="border-radius: 20px;padding: 0!important;" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'400px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
       <div class="hero-image" :style="`background-image:url(${spot.cover_image_link})`">
-        <div class="div-over-image-top ">
+        <div class="div-over-image-top">
           {{spot.celebrity.name}}
         </div>
         <div class="div-over-image-bottom">
@@ -48,11 +48,12 @@ export default {
   background-color: rgba(0, 0, 0, 0.25);
   bottom: 0;
   z-index: 3;
-  padding: 10px 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   display: block;
   font-size: 1rem;
   width: 100%;
-  height: 13rem;
+  height: 40%;
   color: #FFFFFF!important;
 
   display: -webkit-box;
@@ -78,6 +79,12 @@ export default {
 @media only screen and (max-width: 600px) {
   .div-over-image-bottom {
     height: 50%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .div-over-image-bottom {
+    height: 35%;
   }
 }
 </style>

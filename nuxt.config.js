@@ -88,7 +88,7 @@ export default {
   elementUI: {
     components: [
       'Button', 'DatePicker', 'Carousel', 'CarouselItem',
-      'Col','Row','Card','Image'
+      'Col','Row','Card','Image','Tag'
     ]
   },
   axios: {
