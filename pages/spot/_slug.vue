@@ -1,7 +1,7 @@
 <!-- Please remove this file from your project -->
 <template>
   <div>
-    <div class="mx-auto m-2" style="height: 100vh">
+    <div class="mx-auto m-2" >
       <div ref="swiper" class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">

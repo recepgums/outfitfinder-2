@@ -14,6 +14,7 @@
         <OverViewCard :spot="spot"></OverViewCard>
       </div>
     </div>
+
   </div>
 </template>
 

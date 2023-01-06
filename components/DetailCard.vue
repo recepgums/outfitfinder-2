@@ -3,20 +3,18 @@
     <div class="d-none d-md-block p-0 mx-auto">
       <el-card v-if="spot" style="border-radius: 30px;max-width: 60vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
-          <div class="col-md-6 col-sm- p-0">
+          <div class="col-md-6 col-sm-12 p-0">
             <el-image
               format="webp"
                 style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
                 sizes="sm:100vw md:50vw lg:400px"
                 class="figure-img img-fluid card-img-top shadow m-0"
-                width="431"
-                height="600"
                 :fit="'fill'"
                 :alt="spot.title"
                 :src="spot.cover_image_link"
             />
           </div>
-          <div class="col-md-6 col-sm- p-4" style="background-color: rgba(255,20,147,0.02)">
+          <div class="col-md-6 col-sm-12 p-4" style="background-color: rgba(255,20,147,0.02)">
             <div class="pb-2 px-2">
               <div class="text-bold text-black"
                    style="font-size: 1.5rem;font-weight: bold;">
@@ -25,18 +23,6 @@
               <p v-html="spot?.description"></p>
             </div>
 
-            <div class="px-2" style="position:relative;top: 50px">
-              <div class="row">
-                <div ref="productSwiper" class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
-                      <ProductCard :product="product"/>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="px-2" style="position:relative;top: 50px">
               <div class="row">
                 <div ref="productSwiper" class="swiper">
@@ -126,6 +112,7 @@ import Swiper, {Navigation, Pagination, Autoplay} from 'swiper'
 import 'swiper/swiper-bundle.min.css'
 
 export default {
+
   head: {
     title: 'Home page',
     meta: [
@@ -180,10 +167,6 @@ export default {
 .at-the-bottom {
   position: absolute;
   bottom: 0;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
-  @apply w-48 h-48 ;
 }
 
 </style>

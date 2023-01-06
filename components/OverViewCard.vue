@@ -21,6 +21,7 @@
       </div>
 
     </NuxtLink>
+
   </el-card>
 </template>
 
