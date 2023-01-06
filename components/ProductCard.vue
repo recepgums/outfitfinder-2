@@ -1,12 +1,12 @@
 <template>
   <div>
-    <a style="color:#000;" target="_blank" :href="product.affiliate_link">
+    <a style="color:#000;" target="_blank" :href="product?.affiliate_link">
         <div class="hero-image2"
              :style="`background-image:url(${product?.image_link})`"
         />
         <el-button size="small"  icon="el-icon-shopping-bag-1" round style="background-color: black;color:white">
-          {{ product.price }}
-          {{ product.currency }}
+          {{ product?.price }}
+          {{ product?.currency }}
         </el-button>
     </a>
   </div>

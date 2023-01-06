@@ -6,12 +6,12 @@
           <div class="col-md-6 col-sm-12 p-0">
             <el-image
               format="webp"
-                style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
-                sizes="sm:100vw md:50vw lg:400px"
-                class="figure-img img-fluid card-img-top shadow m-0"
-                :fit="'fill'"
-                :alt="spot.title"
-                :src="spot.cover_image_link"
+              style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
+              sizes="sm:100vw md:50vw lg:400px"
+              class="figure-img img-fluid card-img-top shadow m-0"
+              :fit="'fill'"
+              :alt="spot.title"
+              :src="spot.cover_image_link"
             />
           </div>
           <div class="col-md-6 col-sm-12 p-4" style="background-color: rgba(255,20,147,0.02)">
@@ -23,16 +23,33 @@
               <p v-html="spot?.description"></p>
             </div>
 
-            <div class="px-2" style="position:relative;top: 50px">
-              <div class="row">
-                  <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
+            <div class="px-2" style="position:relative;top: 0px">
+              <client-only>
+                <div class="row">
+                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-right: 5px"
+                       v-for="product in spot?.products" :key="product.id">
                     <ProductCard :product="product"/>
                   </div>
-              </div>
+                </div>
+                <br>
+                <p class="text-muted">Buy for less</p>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-3 col-3" style="width: auto;margin-right: 5px"
+                       v-for="product in spot?.products" :key="product.id">
+                    <ProductCard :product="product?.suggestion_product"/>
+                  </div>
+                </div>
+              </client-only>
             </div>
-            <div class="col-12 text-right pr-5" style="position:absolute;bottom: 50px">
-              <el-tag type="danger" >#{{ spot?.category?.name }}</el-tag>
-              <el-tag type="danger" >#{{ spot?.celebrity?.name }}</el-tag>
+            <div class="col-12 text-right pr-5" style="position:absolute;bottom: 10px">
+              <NuxtLink :to="`/category/${spot?.category?.name}`" >
+                <el-tag type="danger">#{{ spot?.category?.name }}</el-tag>
+              </NuxtLink>
+              <NuxtLink :to="`/category/${spot?.category?.name}`" >
+                <el-tag type="danger">#{{ spot?.celebrity?.name }}</el-tag>
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -41,17 +58,17 @@
 
 
     <div class="d-md-none d-sm-block">
-      <el-card v-if="spot" class="mx-2"  style="border-radius: 30px" :body-style="{padding: '0px'}">
+      <el-card v-if="spot" class="mx-2" style="border-radius: 30px" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
             <el-image
-                format="webp"
-                style="border-top-left-radius:20px;border-top-right-radius:20px"
-                sizes="sm:60vw md:60vw lg:600px"
-                :fit="'fill'"
-                height="450"
-                :alt="spot.title"
-                :src="spot.cover_image_link"
+              format="webp"
+              style="border-top-left-radius:20px;border-top-right-radius:20px"
+              sizes="sm:60vw md:60vw lg:600px"
+              :fit="'fill'"
+              height="450"
+              :alt="spot.title"
+              :src="spot.cover_image_link"
             />
           </div>
           <div class="col-sm-12">
@@ -64,31 +81,31 @@
             </div>
             <div class="px-2">
               <client-only>
-                    <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
-                      <a
-                          style="color:#000;"
-                          :key="product?.id"
-                          :href="product?.affiliate_link"
-                          target="_blank"
-                      >
-                        <el-image
-                          format="webp"
-                            sizes="sm:70vw md:70vw lg:600px"
-                            style="height: 12vh"
-                            class="w-full"
-                            :src="product?.image_link"
-                            :alt="spot?.title"
-                        />
-                        <p>
-                          {{ product.name }}{{ product.price }}{{ product.currency }}
-                        </p>
-                      </a>
+                <div class="row">
+                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-right: 5px"
+                       v-for="product in spot?.products" :key="product.id">
+                    <ProductCard :product="product"/>
                   </div>
+                </div>
+                <br>
+                <p class="text-muted">Buy for less</p>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-3 col-3" style="width: auto;margin-right: 5px"
+                       v-for="product in spot?.products" :key="product.id">
+                    <ProductCard :product="product?.suggestion_product"/>
+                  </div>
+                </div>
               </client-only>
             </div>
-            <div class="col-12 text-right">
-              <span class="badge mr-2" style="color: deeppink">#{{ spot?.category?.name }}</span>
-              <span class="badge mr-2" style="color: deeppink">#{{ spot?.celebrity?.name }}</span>
+            <div class="col-12 text-right mt-2">
+              <NuxtLink :to="`/category/${spot?.category?.name}`" >
+                <el-tag type="danger">#{{ spot?.category?.name }}</el-tag>
+              </NuxtLink>
+              <NuxtLink :to="`/category/${spot?.category?.name}`" >
+                <el-tag type="danger">#{{ spot?.celebrity?.name }}</el-tag>
+              </NuxtLink>
             </div>
           </div>
         </div>

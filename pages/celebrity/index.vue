@@ -1,0 +1,55 @@
+<!-- Please remove this file from your project -->
+<template>
+  <div class="container">
+    <div class="row">
+      <CelebrityCard class="col-md-4  col-4" :celebrity="celebrity"
+                     v-for="celebrity in celebrities"
+                     :key="celebrity.id"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'IndexPage',
+  data() {
+    return {
+      content: '',
+    }
+  },
+  async asyncData({$axios}) {
+    try {
+      const celebrities = await $axios.get(`${$axios.defaults.baseURL}celebrity`).then(resp => resp.data.data)
+      console.log(celebrities)
+      return {celebrities: celebrities}
+    } catch (error) {
+      console.log(error)
+    }
+  },
+}
+
+</script>
+<style scoped>
+@media only screen and (max-width: 600px) {
+  .el-card {
+    max-height: 420px;
+    margin: 10px 0;
+    /*background-color: green;*/
+  }
+}
+
+@media screen and (min-width: 1130px) {
+  .el-card {
+    max-height: 450px;
+    /*background-color: red;*/
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .el-card {
+    /*background-color: blue;*/
+    max-height: 500px;
+  }
+}
+</style>

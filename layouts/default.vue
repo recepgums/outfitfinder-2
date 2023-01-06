@@ -1,5 +1,5 @@
 <template>
-  <div class="container-md">
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
       <NuxtLink class="navbar-brand" to="/">
         <h3 class="text-center">
@@ -21,20 +21,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/feed">Feed</NuxtLink>
-          </li>
-          <li class="nav-item">
             <NuxtLink class="nav-link" to="/celebrity">Celebrities</NuxtLink>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <NuxtLink class="dropdown-item" to="/category/outfits">Outfits</NuxtLink>
-              <NuxtLink class="dropdown-item" to="/category/make-up">Make Up</NuxtLink>
-              <NuxtLink class="dropdown-item" to="/category/hair">Hair</NuxtLink>
-            </div>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/category/outfits">Outfits</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/category/make-up">Make Up</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/category/hair">Hair</NuxtLink>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -111,5 +107,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.nuxt-link-exact-active{
+  color: deeppink!important;
+  font-weight: bold;
 }
 </style>
