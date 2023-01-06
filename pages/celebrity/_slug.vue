@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <CelebrityCard :celebrity="celebrity"/>
+    <CelebrityCard class="text-center" :celebrity="celebrity"/>
     <div class="row" v-if="spots.length > 0">
       <OverViewCard class="col-sm-12 col-md-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
     </div>
@@ -14,7 +14,6 @@ export default {
   name: 'CelebrityDetail',
   async asyncData({$axios, params}) {
     const celebrity = await $axios.get(`${$axios.defaults.baseURL}celebrity/${params.slug}`).then(resp => resp.data.data)
-    console.log(celebrity.id)
     const spots = await $axios.get(`${$axios.defaults.baseURL}spot?celebrity_id=${celebrity.id}`).then(resp => resp.data.data)
     return {celebrity: celebrity,spots:spots}
   },

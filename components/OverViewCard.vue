@@ -10,7 +10,7 @@
             {{ spot.title }}
           </h2>
           <div class="row">
-            <ProductCard class="col-sm-4 col-4" :product="product" v-for="product in spot.products"/>
+            <ProductCard class="col-sm-4 col-4 my" :key="product.id" :product="product" v-for="product in spot.products"/>
           </div>
         </div>
       </div>

@@ -20,8 +20,7 @@ export default {
   },
   async asyncData({$axios}) {
     try {
-      const celebrities = await $axios.get(`${$axios.defaults.baseURL}celebrity`).then(resp => resp.data.data)
-      console.log(celebrities)
+      const celebrities = await $axios.get(`${$axios.defaults.baseURL}celebrity?has_spot=1`).then(resp => resp.data.data)
       return {celebrities: celebrities}
     } catch (error) {
       console.log(error)

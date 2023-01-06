@@ -5,6 +5,7 @@
       <img height="140" width="140"
            :src="celebrity?.cover_image_link" :alt="celebrity.name">
       <h2 style="color: deeppink;font-size: 1rem;text-align: center">{{celebrity?.name}}</h2>
+      <small v-if="celebrity?.spots_count">{{celebrity?.spots_count}} spot</small>
     </NuxtLink>
   </div>
 </template>
