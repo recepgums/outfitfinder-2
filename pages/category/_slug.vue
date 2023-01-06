@@ -1,11 +1,17 @@
 <template>
   <div>
-    Category
+    Category {{ spot }}
   </div>
 </template>
 
 <script>
-export default {
 
+export default {
+  name: "CategoryDetail",
+  async asyncData({$axios, params}) {
+    const spot = params
+    const relatedSpots = await $axios.get(`${$axios.defaults.baseURL}related/spot/${params.slug}`).then(resp => resp.data.data)
+    return {spot: spot, relatedSpots: relatedSpots}
+  },
 }
 </script>

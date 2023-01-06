@@ -44,11 +44,11 @@
               </client-only>
             </div>
             <div class="col-12 text-right pr-5" style="position:absolute;bottom: 10px">
-              <NuxtLink :to="`/category/${spot?.category?.name}`" >
-                <el-tag type="danger">#{{ spot?.category?.name }}</el-tag>
+              <NuxtLink :to="`/category/${spot?.category?.slug}`" >
+                <el-tag type="success">#{{ spot?.category?.name }}</el-tag>
               </NuxtLink>
-              <NuxtLink :to="`/category/${spot?.category?.name}`" >
-                <el-tag type="danger">#{{ spot?.celebrity?.name }}</el-tag>
+              <NuxtLink :to="`/celebrity/${spot?.celebrity?.slug}`" >
+                <el-tag type="success">#{{ spot?.celebrity?.slug }}</el-tag>
               </NuxtLink>
             </div>
           </div>
@@ -100,11 +100,11 @@
               </client-only>
             </div>
             <div class="col-12 text-right mt-2">
-              <NuxtLink :to="`/category/${spot?.category?.name}`" >
-                <el-tag type="danger">#{{ spot?.category?.name }}</el-tag>
+              <NuxtLink :to="`/category/${spot?.category?.slug}`" >
+                <el-tag type="success">#{{ spot?.category?.name }}</el-tag>
               </NuxtLink>
-              <NuxtLink :to="`/category/${spot?.category?.name}`" >
-                <el-tag type="danger">#{{ spot?.celebrity?.name }}</el-tag>
+              <NuxtLink :to="`/celebrity/${spot?.celebrity?.slug}`" >
+                <el-tag type="success">#{{ spot?.celebrity?.slug }}</el-tag>
               </NuxtLink>
             </div>
           </div>
