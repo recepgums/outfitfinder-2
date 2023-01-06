@@ -2,7 +2,7 @@
   <div class="container">
     <CelebrityCard :celebrity="celebrity"/>
     <div class="row" v-if="spots.length > 0">
-      <OverViewCard class="col-sm-4 col-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
+      <OverViewCard class="col-sm-12 col-md-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
     </div>
     <div v-else>
       Spot not found for {{celebrity?.name}}
