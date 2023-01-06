@@ -25,14 +25,9 @@
 
             <div class="px-2" style="position:relative;top: 50px">
               <div class="row">
-                <div ref="productSwiper" class="swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
-                      <ProductCard :product="product"/>
-                    </div>
-                    <div class="swiper-pagination"></div>
+                  <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
+                    <ProductCard :product="product"/>
                   </div>
-                </div>
               </div>
             </div>
             <div class="col-12 text-right pr-5" style="position:absolute;bottom: 50px">
@@ -68,9 +63,6 @@
               <p v-html="spot?.description"></p>
             </div>
             <div class="px-2">
-              <div class="slider">
-                <div ref="swiper22" class="swiper">
-                  <div class="swiper-wrapper">
                     <div class="swiper-slide" style="width: auto;margin-right: 5px" v-for="product in spot?.products">
                       <a
                           style="color:#000;"
@@ -90,10 +82,7 @@
                           {{ product.name }}{{ product.price }}{{ product.currency }}
                         </p>
                       </a>
-                    </div>
                   </div>
-                </div>
-              </div>
             </div>
             <div class="col-12 text-right">
               <span class="badge mr-2" style="color: deeppink">#{{ spot?.category?.name }}</span>

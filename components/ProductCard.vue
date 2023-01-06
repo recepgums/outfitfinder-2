@@ -1,23 +1,13 @@
 <template>
   <div>
     <a style="color:#000;" target="_blank" :href="product.affiliate_link">
-      <el-card :body-style="{ padding: '0px'}">
-        <el-image
-          provider="ipx"
-          format="webp"
-          style="object-fit: contain;width: 100px"
-          class="w-full"
-          :src="product?.image_link"
-          :alt="spot?.title"
+        <div class="hero-image2"
+             :style="`background-image:url(${product?.image_link})`"
         />
-
-      </el-card>
-      <a :href="product.affiliate_link" target="_blank">
         <el-button size="small"  icon="el-icon-shopping-bag-1" round style="background-color: black;color:white">
           {{ product.price }}
           {{ product.currency }}
         </el-button>
-      </a>
     </a>
   </div>
 </template>
@@ -27,3 +17,17 @@ export default {
   props:['product']
 }
 </script>
+<style scoped>
+
+.hero-image2 {
+  height: 75px;
+  width: 75px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>

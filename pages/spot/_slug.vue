@@ -10,6 +10,13 @@
           <div class="swiper-slide"></div>
         </div>
       </div>
+      <br><br>
+      <hr>
+      <div class="row">
+        <div v-for="spot in relatedSpots" class="col-md-4">
+          <OverViewCard  :spot="spot"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,8 +31,8 @@ export default {
   name: 'SpotDetail',
   async asyncData({$axios,params}){
     const spot = await $axios.get(`${$axios.defaults.baseURL}spot/${params.slug}`).then(resp =>resp.data.data)
-    console.log(spot)
-    return {spot:spot}
+    const relatedSpots = await  $axios.get(`${$axios.defaults.baseURL}related/spot/${params.slug}`).then(resp => resp.data.data)
+    return {spot:spot, relatedSpots:relatedSpots}
   },
   data() {
     return {

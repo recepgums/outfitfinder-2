@@ -1,27 +1,20 @@
 <template>
-  <el-card v-if="spot" style="border-radius: 20px" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'650px' }">
+  <el-card v-if="spot" style="border-radius: 20px" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'400px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
-      <el-image
-        format="webp"
-        sizes="sm:50vw md:50vw lg:400px"
-        style="object-fit: contain;"
-        :fit="'fill'"
-        :alt="spot.title"
-        :src="spot.cover_image_link"
-      />
-     <div class="div-over-image-top">
+      <div class="hero-image" :style="`background-image:url(${spot.cover_image_link})`">
+        <div class="div-over-image-top ">
           {{spot.celebrity.name}}
-     </div>
-      <hr style="color: white;height: 2px">
-      <div class="div-over-image-bottom">
-        <h2 style="font-size: 1.4rem">
-          {{ spot.title }}
-        </h2>
-        <div v-html="spot.description"/>
+        </div>
+        <div class="div-over-image-bottom">
+          <h2 style="font-size: 1rem">
+            {{ spot.title }}
+          </h2>
+          <div class="row">
+            <ProductCard class="col-sm-4 col-4" :product="product" v-for="product in spot.products"/>
+          </div>
+        </div>
       </div>
-
     </NuxtLink>
-
   </el-card>
 </template>
 
@@ -40,15 +33,6 @@ export default {
 
 </script>
 <style>
-.spot-description {
-  display: -webkit-box;
-  max-width: 400px;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .div-over-image-top{
   position: absolute;
   left: 0px;
@@ -62,23 +46,38 @@ export default {
 .div-over-image-bottom{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.25);
-  bottom: 10px;
+  bottom: 0;
   z-index: 3;
   padding: 10px 10px;
   display: block;
   font-size: 1rem;
-  width: 20px;
-  height: 25%;
-  min-width: 90%;
+  width: 100%;
+  height: 13rem;
   color: #FFFFFF!important;
-  overflow: hidden;
+
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: normal;
+  overflow: hidden;
 }
 .invert {
   background-color: white;
   filter: invert(100%);
+}
+
+.hero-image {
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+  .div-over-image-bottom {
+    height: 50%;
+  }
 }
 </style>
