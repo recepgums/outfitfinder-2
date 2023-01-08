@@ -94,7 +94,7 @@
                 <div class="row">
                   <div class="col-md-3 col-3" style="width: auto;margin-right: 5px"
                        v-for="product in spot?.products" :key="product.id">
-                    <ProductCard :product="product?.suggestion_product"/>
+                    <ProductCard v-if="product?.suggestion_product" :product="product?.suggestion_product"/>
                   </div>
                 </div>
               </client-only>
@@ -165,5 +165,4 @@ export default {
   position: absolute;
   bottom: 0;
 }
-
 </style>

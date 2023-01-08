@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row">
     <a style="color:#000;" target="_blank" :href="product?.affiliate_link">
         <div class="hero-image2"
              :style="`background-image:url(${product?.image_link})`"
@@ -17,7 +17,7 @@ export default {
   props:['product']
 }
 </script>
-<style scoped>
+<style>
 
 .hero-image2 {
   height: 75px;
