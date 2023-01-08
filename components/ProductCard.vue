@@ -24,10 +24,10 @@ export default {
   width: 75px;
   margin-bottom: 5px;
   border-radius: 10px;
-  background-color: #cccccc;
+  background-color: white;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: relative;
 }
 </style>
