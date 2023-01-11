@@ -81,7 +81,10 @@ export default {
 
   image: {
     format: 'webp',
-    domains: ['http://54.172.64.77'],
+    domains: [
+      // 'http://54.172.64.77'
+      'https://dijitaluzmaniniz.com'
+    ],
     provider: 'ipx'
   },
 
@@ -93,7 +96,8 @@ export default {
   },
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://54.172.64.77/api/'
+    // baseURL: 'http://54.172.64.77/api/'
+    baseURL: 'https://dijitaluzmaniniz.com/api/'
   },
 
   device: {
