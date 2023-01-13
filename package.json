@@ -16,9 +16,11 @@
     "element-ui": "^2.15.12",
     "nuxt": "^2.15.8",
     "nuxt-element-ui": "^1.0.10",
+    "nuxt-lazy-load": "^1.2.9",
     "swiper": "^6.8.1",
     "ufo": "^1.0.1",
     "vue": "^2.7.10",
+    "vue-lazyload": "^3.0.0-rc.2",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },

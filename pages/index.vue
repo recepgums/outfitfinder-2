@@ -4,7 +4,7 @@
     <div class="d-md-none d-sm-block container-md">
       <div class="row">
         <div class="col-12" v-for="(spot, i) in spots" :key="spot.id">
-          <OverViewCard :spot="spot"></OverViewCard>
+          <OverViewCard  :spot="spot"></OverViewCard>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,7 +46,7 @@ export default {
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/device',
-
+    ['nuxt-lazy-load',{}],
 
     '@nuxtjs/sitemap'
   ],
@@ -80,15 +80,6 @@ export default {
     ]
   },
 
-  image: {
-    format: 'webp',
-    domains: [
-      // 'http://54.172.64.77'
-      'https://dijitaluzmaniniz.com'
-    ],
-    provider: 'ipx'
-  },
-
   elementUI: {
     components: [
       'Button', 'DatePicker', 'Carousel', 'CarouselItem',
@@ -97,7 +88,7 @@ export default {
   },
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    // baseURL: 'http://54.172.64.77/api/'
+    // baseURL: 'http://127.0.0.1:8000/api/'
     baseURL: 'https://dijitaluzmaniniz.com/api/'
   },
 
