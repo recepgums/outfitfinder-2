@@ -1,7 +1,7 @@
 <template>
   <el-card v-if="spot" style="border-radius: 20px;padding: 0!important;" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'400px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
-      <div class="hero-image" :lazy-background="spot.cover_image_link" :style="`background-image:url(${spot.cover_image_link})`">
+      <div class="hero-image" :lazy-background="spot.cover_image_link">
         <div class="div-over-image-top">
           {{spot.celebrity.name}}
         </div>

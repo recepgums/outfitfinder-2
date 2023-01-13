@@ -64,6 +64,10 @@ export default {
     Sitemap: () => `https://closetfinder.com/sitemap.xml`
   },
 
+  nuxtLazyLoad:{
+    defaultImage: '~assets/images/holder.webp',
+  },
+
   sitemap: {
     path:'sitemap.xml',
     hostname: 'https://closetfinder.com',
