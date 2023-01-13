@@ -46,7 +46,7 @@ export default {
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/device',
-    ['nuxt-lazy-load',{}],
+    'nuxt-lazy-load',
 
     '@nuxtjs/sitemap'
   ],
@@ -62,10 +62,6 @@ export default {
     UserAgent: '*',
     Disallow: '',
     Sitemap: () => `https://closetfinder.com/sitemap.xml`
-  },
-
-  nuxtLazyLoad:{
-    defaultImage: '~assets/images/holder.webp',
   },
 
   sitemap: {
