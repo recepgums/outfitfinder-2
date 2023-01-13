@@ -38,7 +38,8 @@ export default {
   left: 0px;
   top: 0px;
   z-index: 3;
-  background-color: #92AD40;
+  border-radius: 20px 20px 20px 0;
+  background-color: black;
   padding: 5px;
   color: #FFFFFF;
   font-weight: bold;
