@@ -1,7 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Closet Finder',
+    title: 'Closet Finder |  Identifying Celebrity Outfits',
+    description:"Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes",
     htmlAttrs: {
       lang: 'en'
     },

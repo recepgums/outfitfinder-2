@@ -21,20 +21,6 @@
 import OverViewCard from "../components/OverViewCard";
 
 export default {
-  head() {
-    return {
-      title: this.seo.title,
-      meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.seo.description
-        }
-      ],
-    }
-  },
   components: {
     OverViewCard
   },
@@ -48,8 +34,7 @@ export default {
   async asyncData({$axios}) {
     try {
       const spots = await $axios.get(`${$axios.defaults.baseURL}spot`).then(resp => resp.data.data)
-      const seo = await $axios.get(`${$axios.defaults.baseURL}seo/home`).then(resp => resp.data)
-      return {spots: spots, seo: seo}
+      return {spots: spots}
     } catch (error) {
       console.log(error)
     }
