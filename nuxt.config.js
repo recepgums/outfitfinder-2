@@ -46,7 +46,6 @@ export default {
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/device',
-    'nuxt-lazy-load',
 
     '@nuxtjs/sitemap'
   ],
