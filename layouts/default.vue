@@ -6,7 +6,7 @@
           closet
           <span style="
             color: white;
-            background-color: deeppink;
+            background-color: #f056a9ba;
             border-radius: 20px;
             padding: 5px">
               finder
@@ -109,7 +109,7 @@ html {
   background-color: #35495e;
 }
 .nuxt-link-exact-active{
-  color: deeppink!important;
+  color: #f056a9ba!important;
   font-weight: bold;
 }
 </style>

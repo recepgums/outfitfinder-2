@@ -4,16 +4,19 @@
       <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
-            <el-image
-              format="webp"
-              style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
-              sizes="sm:100vw md:50vw lg:400px"
-              class="figure-img img-fluid card-img-top shadow m-0"
-              :fit="'fill'"
-              :alt="spot.title"
-              :src="spot.cover_image_link"
-              :preview-src-list="spot.images"
-            />
+            <el-carousel arrow="always" height="70vh">
+              <el-carousel-item v-for="image in spot.images" :key="item">
+                <el-image
+                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
+                  class="figure-img img-fluid card-img-top shadow m-0"
+                  :fit="'contain'"
+                  :alt="spot.title"
+                  :src="image"
+                  :preview-src-list="spot.images"
+                />
+              </el-carousel-item>
+            </el-carousel>
+
           </div>
           <div class="col-md-6 col-sm-12 p-4" style="background-color: rgba(255,20,147,0.02)">
             <div class="pb-2 px-2">
@@ -62,16 +65,20 @@
       <el-card v-if="spot" class="mx-2" style="border-radius: 30px" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
-            <el-image
-              format="webp"
-              style="border-top-left-radius:20px;border-top-right-radius:20px"
-              sizes="sm:60vw md:60vw lg:600px"
-              :fit="'fill'"
-              :preview-src-list="spot.images"
-              height="450"
-              :alt="spot.title"
-              :src="spot.cover_image_link"
-            />
+            <el-carousel trigger="click"  arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="image in spot.images" :key="item">
+                <el-image
+                  format="webp"
+                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
+                  sizes="sm:100vw md:50vw lg:400px"
+                  class="figure-img img-fluid card-img-top shadow m-0"
+                  :fit="'fill'"
+                  :alt="spot.title"
+                  :src="image"
+                  :preview-src-list="spot.images"
+                />
+              </el-carousel-item>
+            </el-carousel>
           </div>
           <div class="col-sm-12">
             <div class="pb-2 px-2">
@@ -166,5 +173,26 @@ export default {
 .at-the-bottom {
   position: absolute;
   bottom: 0;
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .el-carousel__item{
+    max-height: 60vh;
+  }
+  .el-carousel__arrow{
+    background-color: #ff1493ba;
+  }
+  .el-carousel__container{
+    max-height: 60vh!important;
+  }
+
 }
 </style>
