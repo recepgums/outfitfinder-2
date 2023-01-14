@@ -4,7 +4,7 @@
       <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
-            <el-carousel arrow="always" height="70vh">
+            <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh">
               <el-carousel-item v-for="image in spot.images" :key="item">
                 <el-image
                   style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
@@ -65,14 +65,12 @@
       <el-card v-if="spot" class="mx-2" style="border-radius: 30px" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
-            <el-carousel trigger="click"  arrow="always" indicator-position="outside">
+            <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh" indicator-position="outside">
               <el-carousel-item v-for="image in spot.images" :key="item">
                 <el-image
-                  format="webp"
-                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px"
-                  sizes="sm:100vw md:50vw lg:400px"
+                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
                   class="figure-img img-fluid card-img-top shadow m-0"
-                  :fit="'fill'"
+                  :fit="'contain'"
                   :alt="spot.title"
                   :src="image"
                   :preview-src-list="spot.images"
