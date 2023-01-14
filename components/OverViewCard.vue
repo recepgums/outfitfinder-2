@@ -72,21 +72,21 @@ export default {
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: relative;
 }
 
 @media only screen and (max-width: 600px) {
   .div-over-image-bottom {
-    height: 50%;
+    height: 40%;
   }
 }
 
 @media screen and (max-width: 1130px) {
   .div-over-image-bottom {
     height: 45%;
-    min-height: 200px;
-    max-height: 275px;
+    min-height: 150px;
+    max-height: 255px;
   }
 }
 </style>

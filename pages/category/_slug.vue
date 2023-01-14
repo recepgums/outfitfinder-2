@@ -9,7 +9,7 @@
 export default {
   name: "CategoryDetail",
   async asyncData({$axios, params}) {
-    const spot = params
+    const slug = params.slug
     const relatedSpots = await $axios.get(`${$axios.defaults.baseURL}related/spot?category=${params.slug}`)
       .then(resp => resp.data.data)
     return {spot: spot, relatedSpots: relatedSpots}

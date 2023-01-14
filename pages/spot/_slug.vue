@@ -9,12 +9,10 @@
       Similar spots
     </h2>
     <hr>
-    <div class="row">
-      <client-only>
-        <div v-for="spot in relatedSpots" :key="spot.id" class="col-md-4 my-1">
-          <OverViewCard :spot="spot"/>
-        </div>
-      </client-only>
+    <div class="d-block container-md">
+      <div class="row">
+        <OverViewCard class="col-sm-4 col-4 my-1" v-for="(spot, i) in relatedSpots" :key="spot.id" :spot="spot"></OverViewCard>
+      </div>
     </div>
   </div>
 </template>
@@ -78,7 +76,7 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
 h1 {
   font-family: Roboto, sans-serif;
 }

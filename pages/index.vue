@@ -42,7 +42,7 @@ export default {
 }
 
 </script>
-<style scoped>
+<style>
 @media only screen and (max-width: 600px) {
   .el-card {
     max-height: 420px;
