@@ -30,7 +30,7 @@
             <NuxtLink class="nav-link" to="/category/make-up">Make Up</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/hair">Hair</NuxtLink>
+            <NuxtLink class="nav-link" to="/category/nail">Nail</NuxtLink>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
