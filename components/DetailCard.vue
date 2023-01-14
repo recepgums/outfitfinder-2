@@ -62,7 +62,7 @@
 
 
     <div class="d-md-none d-sm-block">
-      <el-card v-if="spot" class="mx-2" style="border-radius: 30px" :body-style="{padding: '0px'}">
+      <el-card v-if="spot" class="mx-2" style="border-radius: 30px;max-height: initial!important;" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh" indicator-position="outside">
