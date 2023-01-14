@@ -38,7 +38,8 @@ export default {
   left: 0px;
   top: 0px;
   z-index: 3;
-  background-color: #92AD40;
+  background-color: black;
+  border-radius: 20px 0 20px 0;
   padding: 5px;
   color: #FFFFFF;
   font-weight: bold;
@@ -46,16 +47,15 @@ export default {
 .div-over-image-bottom{
   position: absolute;
   background-color: rgba(0, 0, 0, 0.25);
-  bottom: 0;
+  bottom: 35px;
   z-index: 3;
   padding-bottom: 20px;
   padding-left: 20px;
   display: block;
   font-size: 1rem;
   width: 100%;
-  height: 40%;
+  height: auto;
   color: #FFFFFF!important;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -84,7 +84,9 @@ export default {
 
 @media screen and (max-width: 1130px) {
   .div-over-image-bottom {
-    height: 35%;
+    height: 45%;
+    min-height: 200px;
+    max-height: 275px;
   }
 }
 </style>

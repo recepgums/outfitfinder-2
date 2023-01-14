@@ -12,6 +12,7 @@
               :fit="'fill'"
               :alt="spot.title"
               :src="spot.cover_image_link"
+              :preview-src-list="spot.images"
             />
           </div>
           <div class="col-md-6 col-sm-12 p-4" style="background-color: rgba(255,20,147,0.02)">
@@ -66,6 +67,7 @@
               style="border-top-left-radius:20px;border-top-right-radius:20px"
               sizes="sm:60vw md:60vw lg:600px"
               :fit="'fill'"
+              :preview-src-list="spot.images"
               height="450"
               :alt="spot.title"
               :src="spot.cover_image_link"
