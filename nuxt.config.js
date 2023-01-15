@@ -1,21 +1,26 @@
+const axios = require('axios')
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Closet Finder |  Identifying Celebrity Outfits',
-    description:"Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes",
+    description: "Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes",
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''},
+      {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css' },
-      { crossorigin:"anonymous", rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'},
+      {
+        crossorigin: "anonymous",
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'
+      }
     ]
   },
 
@@ -64,31 +69,28 @@ export default {
   },
 
   sitemap: {
-    path:'sitemap.xml',
-    hostname: 'https://closetfinder.com',
-    gzip: true,
-    routes: [
-      '/',
-      '/spot/2',
-      {
-        url: '/page/3',
-        changefreq: 'daily',
-        priority: 1,
-        lastmod: '2017-06-30T13:30:00.000Z'
-      }
-    ]
+    path: '/sitemap.xml',
+    routes: () => {
+      let arr =  axios.get('https://api.closetfinder.com/api/spot').then(resp => {
+        return resp.data.data.map(spot => `/spot/${spot.slug}`)
+      })
+
+      let arr2 =  axios.get('https://api.closetfinder.com/api/celebrity').then(resp => {
+        return resp.data.data.map(spot => `/celebrity/${spot.slug}`)
+      })
+
+      return arr
+    }
   },
 
   image: {
-    format: 'webp',
-    domains: ['http://54.172.64.77'],
-    provider: 'ipx'
+    format: 'webp'
   },
 
   elementUI: {
     components: [
       'Button', 'DatePicker', 'Carousel', 'CarouselItem',
-      'Col','Row','Card','Image','Tag'
+      'Col', 'Row', 'Card', 'Image', 'Tag'
     ]
   },
   axios: {
