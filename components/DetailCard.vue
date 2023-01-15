@@ -1,7 +1,7 @@
 <template>
   <div class="container-md p-0">
     <div class="d-none d-md-block p-0">
-      <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;" :body-style="{padding: '0px'}">
+      <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;max-height: initial;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh">
@@ -181,12 +181,12 @@ export default {
   margin: 0;
 }
 
+.el-carousel__arrow{
+  background-color: #ff1493ba;
+}
 @media only screen and (max-width: 600px) {
   .el-carousel__item{
     max-height: 60vh;
-  }
-  .el-carousel__arrow{
-    background-color: #ff1493ba;
   }
   .el-carousel__container{
     max-height: 60vh!important;
