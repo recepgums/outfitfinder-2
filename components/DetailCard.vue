@@ -5,7 +5,7 @@
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh">
-              <el-carousel-item v-for="image in spot.images" :key="item">
+              <el-carousel-item v-for="image in spot.images" :key="image">
                 <el-image
                   style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
                   class="figure-img img-fluid card-img-top shadow m-0"
@@ -66,7 +66,7 @@
         <div class="row">
           <div class="col-sm-12">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh" indicator-position="outside">
-              <el-carousel-item v-for="image in spot.images" :key="item">
+              <el-carousel-item v-for="image in spot.images" :key="image">
                 <el-image
                   style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
                   class="figure-img img-fluid card-img-top shadow m-0"
