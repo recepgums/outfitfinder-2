@@ -49,7 +49,6 @@ export default {
     '@nuxtjs/axios',
     'nuxt-element-ui',
     '@nuxt/image',
-    '@nuxtjs/robots',
     '@nuxtjs/device',
 
     '@nuxtjs/sitemap'
@@ -61,11 +60,6 @@ export default {
   },
   googleAnalytics: {
     id: 'G-22417X0359'
-  },
-  robots: {
-    UserAgent: '*',
-    Disallow: '',
-    Sitemap: () => `https://closetfinder.com/sitemap.xml`
   },
 
   sitemap: {
