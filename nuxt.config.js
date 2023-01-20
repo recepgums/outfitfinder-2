@@ -50,6 +50,8 @@ export default {
     'nuxt-element-ui',
     '@nuxt/image',
     '@nuxtjs/device',
+    // 'nuxt-purgecss',
+    'nuxt-ssr-cache',
     'nuxt-lazy-load',
 
     '@nuxtjs/sitemap'
@@ -57,10 +59,39 @@ export default {
   loading:{color:'deeppink'},
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: [/^element-ui/]
+    transpile: [/^element-ui/],
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
   },
   googleAnalytics: {
     id: 'G-22417X0359'
+  },/*
+  purgecss: {
+    enabled: true
+  },*/
+
+  cache: {
+    useHostPrefix: false,
+    pages: [
+      '/',
+      /^\/$/
+    ],
+    store: {
+      type: 'memory',
+      max: 100,
+      ttl: 3600 * 12
+    }
   },
 
   sitemap: {
@@ -82,6 +113,12 @@ export default {
     format: 'webp'
   },
 
+  pwa: {
+    manifest: {
+      name: 'Closet Finder',
+      lang: 'en'
+    }
+  },
   elementUI: {
     components: [
       'Button', 'DatePicker', 'Carousel', 'CarouselItem',
