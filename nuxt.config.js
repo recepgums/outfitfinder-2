@@ -10,7 +10,7 @@ export default {
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
+      {hid: 'description', name: 'description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes'},
       {name: 'format-detection', content: 'telephone=no'}
     ],
     link: [

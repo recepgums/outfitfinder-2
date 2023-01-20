@@ -33,7 +33,7 @@ export default {
 
   head() {
     return {
-      title: this.spot.meta_title,
+      title: this.spot?.meta_title ?? this.spot?.title,
       meta: [
         {charset: 'utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},
