@@ -50,10 +50,11 @@ export default {
     'nuxt-element-ui',
     '@nuxt/image',
     '@nuxtjs/device',
+    'nuxt-lazy-load',
 
     '@nuxtjs/sitemap'
   ],
-
+  loading:{color:'deeppink'},
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/]
@@ -90,7 +91,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: 'http://127.0.0.1:8000/api/'
-    baseURL: 'https://api.closetfinder.com/api/'
+    baseURL: 'http://192.168.1.105:8000/api/'
   },
 
   device: {

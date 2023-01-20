@@ -1,18 +1,21 @@
 <template>
-  <div class="container-md p-0">
+  <div >
     <div class="d-none d-md-block p-0">
       <el-card v-if="spot" class="mx-auto" style="border-radius: 30px;max-width: 80vw;max-height: initial;" :body-style="{padding: '0px'}">
         <div class="row p-0">
           <div class="col-md-6 col-sm-12 p-0">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh">
               <el-carousel-item v-for="image in spot.images" :key="image">
-                <el-image
-                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
+                <img
+                  style="
+                  border-bottom-left-radius: 30px;
+                  border-top-left-radius: 30px;
+                  object-fit: contain;
+                  height: 100%;"
                   class="figure-img img-fluid card-img-top shadow m-0"
-                  :fit="'contain'"
                   :alt="spot.title"
-                  :src="image"
-                  :preview-src-list="spot.images"
+                  :data-src="image"
+                  v-lazy-load
                 />
               </el-carousel-item>
             </el-carousel>
@@ -28,24 +31,23 @@
             </div>
 
             <div class="px-2" style="position:relative;top: 0px">
-              <client-only>
                 <div class="row">
-                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-right: 5px"
+                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
                        v-for="product in spot?.products" :key="product.id">
                     <ProductCard :product="product"/>
                   </div>
                 </div>
                 <br>
-                <p class="text-muted">Buy for less</p>
-                <hr>
-
-                <div class="row">
-                  <div class="col-md-3 col-3" style="width: auto;margin-right: 5px"
-                       v-for="product in spot?.products" :key="product.id">
-                    <ProductCard :product="product?.suggestion_product"/>
-                  </div>
-                </div>
-              </client-only>
+               <div <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">>
+                 <p class="text-muted">Buy for less</p>
+                 <hr>
+                 <div class="row">
+                   <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
+                        v-for="product in spot?.products" :key="product.id">
+                     <ProductCard :product="product?.suggestion_product"/>
+                   </div>
+                 </div>
+               </div>
             </div>
             <div class="col-12 text-right pr-5" style="position:absolute;bottom: 10px">
               <NuxtLink :to="`/category/${spot?.category?.slug}`" >
@@ -60,20 +62,22 @@
       </el-card>
     </div>
 
-
     <div class="d-md-none d-sm-block">
       <el-card v-if="spot" class="mx-2" style="border-radius: 30px;max-height: initial!important;" :body-style="{padding: '0px'}">
         <div class="row">
           <div class="col-sm-12">
             <el-carousel :arrow="spot.images.length > 1 ? 'always' :'never'" height="70vh" indicator-position="outside">
               <el-carousel-item v-for="image in spot.images" :key="image">
-                <el-image
-                  style="border-bottom-left-radius: 30px;border-top-left-radius: 30px;height: 100%"
+                <img
+                  style="
+                  border-bottom-left-radius: 30px;
+                  border-top-right-radius: 30px;
+                  object-fit: contain;
+                  height: 100%;"
                   class="figure-img img-fluid card-img-top shadow m-0"
-                  :fit="'contain'"
                   :alt="spot.title"
-                  :src="image"
-                  :preview-src-list="spot.images"
+                  :data-src="image"
+                  v-lazy-load
                 />
               </el-carousel-item>
             </el-carousel>
@@ -89,19 +93,20 @@
             <div class="px-2">
               <client-only>
                 <div class="row">
-                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-right: 5px"
+                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
                        v-for="product in spot?.products" :key="product.id">
                     <ProductCard :product="product"/>
                   </div>
                 </div>
                 <br>
-                <p class="text-muted">Buy for less</p>
-                <hr>
-
-                <div class="row">
-                  <div class="col-md-3 col-3" style="width: auto;margin-right: 5px"
-                       v-for="product in spot?.products" :key="product.id">
-                    <ProductCard v-if="product?.suggestion_product" :product="product?.suggestion_product"/>
+                <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
+                  <p class="text-muted">Buy for less</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
+                         v-for="product in spot?.products" :key="product.id">
+                      <ProductCard :product="product?.suggestion_product"/>
+                    </div>
                   </div>
                 </div>
               </client-only>
@@ -191,6 +196,5 @@ export default {
   .el-carousel__container{
     max-height: 60vh!important;
   }
-
 }
 </style>

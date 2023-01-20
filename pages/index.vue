@@ -14,6 +14,10 @@
         <OverViewCard class="col-sm-4 col-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
       </div>
     </div>
+
+    <div v-if="nextPageLoading" class="text-center mb-5" style="font-size: 1.3rem">
+      loading...
+    </div>
   </div>
 </template>
 
@@ -28,17 +32,49 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      content: '',
+      nextPageLink:this.$axios.defaults.baseURL + 'spot?page=2',
+      nextPageLoading:false
     }
   },
   async asyncData({$axios}) {
     try {
-      const spots = await $axios.get(`${$axios.defaults.baseURL}spot`).then(resp => resp.data.data)
+      const resp = await $axios.get(`${$axios.defaults.baseURL}spot?page=1`)
+      const spots = resp.data.data
       return {spots: spots}
     } catch (error) {
       console.log(error)
     }
   },
+  methods: {
+    handleScroll () {
+      let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+
+      if (bottomOfWindow) {
+        if (this.nextPageLink){
+          this.nextPageLoading = true
+          this.getSpots();
+        }
+      }
+    },
+   async getSpots (){
+      await this.$axios.get(this.nextPageLink)
+        .then(resp => {
+          resp.data.data.forEach(item => this.spots.push(item));
+          this.nextPageLink = resp.data.links.next
+          this.nextPageLoading = false
+        })
+    }
+  },
+  created () {
+    if (process.client) {
+      window.addEventListener('scroll', this.handleScroll);
+    }
+  },
+  destroyed () {
+    if (process.client) {
+      window.removeEventListener('scroll', this.handleScroll);
+    }
+  }
 }
 
 </script>

@@ -1,7 +1,7 @@
 <!-- Please remove this file from your project -->
 <template>
   <div>
-    <div class="mx-auto m-2">
+    <div class="d-block container-md">
       <DetailCard :spot="spot"></DetailCard>
     </div>
     <br>
