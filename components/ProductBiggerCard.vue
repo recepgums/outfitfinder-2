@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <a style="color:#000;" target="_blank" rel="nofollow" :href="product?.affiliate_link">
+    <a style="color:#000;text-align: center" target="_blank" rel="nofollow" :href="product?.affiliate_link">
         <div class="hero-image2"
              :lazy-background="product?.image_link"
         />
@@ -13,16 +13,16 @@
 </template>
 <script>
 export default {
-  name:'ProductCard',
+  name:'ProductBiggerCard',
   props:['product']
 }
 </script>
 <style scoped>
 
 .hero-image2 {
-  height: 75px;
-  width: 75px;
-  margin-bottom: 5px;
+  height: 150px;
+  width: 150px;
+  margin: 5px;
   border-radius: 10px;
   background-color: white;
   background-position: center;

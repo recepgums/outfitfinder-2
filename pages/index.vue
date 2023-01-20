@@ -50,10 +50,8 @@ export default {
       let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
 
       if (bottomOfWindow) {
-        if (this.nextPageLink){
-          this.nextPageLoading = true
-          this.getSpots();
-        }
+        this.nextPageLoading = true
+        this.getSpots();
       }
     },
    async getSpots (){

@@ -34,17 +34,17 @@
                 <div class="row">
                   <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
                        v-for="product in spot?.products" :key="product.id">
-                    <ProductCard :product="product"/>
+                    <ProductBiggerCard :product="product"/>
                   </div>
                 </div>
                 <br>
-               <div <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">>
+               <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
                  <p class="text-muted">Buy for less</p>
                  <hr>
                  <div class="row">
                    <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
                         v-for="product in spot?.products" :key="product.id">
-                     <ProductCard :product="product?.suggestion_product"/>
+                     <ProductBiggerCard :product="product?.suggestion_product"/>
                    </div>
                  </div>
                </div>
@@ -95,7 +95,7 @@
                 <div class="row">
                   <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
                        v-for="product in spot?.products" :key="product.id">
-                    <ProductCard :product="product"/>
+                    <ProductBiggerCard :product="product"/>
                   </div>
                 </div>
                 <br>
@@ -105,7 +105,7 @@
                   <div class="row">
                     <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
                          v-for="product in spot?.products" :key="product.id">
-                      <ProductCard :product="product?.suggestion_product"/>
+                      <ProductBiggerCard :product="product?.suggestion_product"/>
                     </div>
                   </div>
                 </div>
