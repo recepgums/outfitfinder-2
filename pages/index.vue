@@ -28,7 +28,16 @@ export default {
   components: {
     OverViewCard
   },
-
+  meta: [
+    {charset: 'utf-8'},
+    {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+    {name: 'title', content: 'Closet Finder |  Identifying Celebrity Outfits'},
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes'
+    }
+  ],
   name: 'IndexPage',
   data() {
     return {
@@ -47,7 +56,12 @@ export default {
   },
   methods: {
     handleScroll () {
-      let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+      let bottomOfWindow = Math.max(
+        window.pageYOffset,
+        document.documentElement.scrollTop,
+        document.body.scrollTop) + window.innerHeight
+        ===
+        document.documentElement.offsetHeight
 
       if (bottomOfWindow) {
         this.nextPageLoading = true
