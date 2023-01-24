@@ -25,7 +25,7 @@
             <div class="pb-2 px-2">
               <div class="text-bold text-black"
                    style="font-size: 1.5rem;font-weight: bold;">
-                {{ spot?.title }}
+                <h1>{{spot?.title}}</h1>
               </div>
               <p v-html="spot?.description"></p>
             </div>
@@ -86,7 +86,7 @@
             <div class="pb-2 px-2">
               <div class="text-bold text-black"
                    style="font-size: 1.5rem;font-weight: bold;">
-                {{ spot?.title }}
+                <h1>{{spot?.title}}</h1>
               </div>
               <p v-html="spot?.description"></p>
             </div>
@@ -196,5 +196,8 @@ export default {
   .el-carousel__container{
     max-height: 60vh!important;
   }
+}
+h1  {
+  font-size: 1.5rem;
 }
 </style>

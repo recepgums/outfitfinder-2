@@ -34,10 +34,8 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@nuxt/image": "^0.7.1",
-    "@nuxtjs/device": "^3.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
-    "nuxt-purgecss": "^2.0.0",
     "sitemap": "^7.1.1"
   }
 }

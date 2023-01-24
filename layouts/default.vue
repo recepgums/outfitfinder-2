@@ -32,6 +32,9 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/category/nail">Nail</NuxtLink>
           </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/category/magazine">Magazine</NuxtLink>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input v-model="searchKeywords" class="form-control mr-sm-2" type="search" placeholder="celebrity, dress name etc" aria-label="Search">

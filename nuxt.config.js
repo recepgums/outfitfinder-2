@@ -49,8 +49,6 @@ export default {
     '@nuxtjs/axios',
     'nuxt-element-ui',
     '@nuxt/image',
-    '@nuxtjs/device',
-    // 'nuxt-purgecss',
     'nuxt-ssr-cache',
     'nuxt-lazy-load',
 
@@ -60,17 +58,19 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
+    analyze: true,
+    minimize: true,
     extractCSS: true,
+    splitChunks: {
+      pages: false,
+      vendor: false,
+      commons: false,
+      runtime: false,
+      layouts: false
+    },
     optimization: {
       splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
+        chunks: 'async'
       }
     }
   },
@@ -96,16 +96,18 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml',
-    routes: () => {
-      let arr =  axios.get('https://api.closetfinder.com/api/spot').then(resp => {
+    routes: async  () => {
+      let arr =  await axios.get('https://api.closetfinder.com/api/spot').then(resp => {
         return resp.data.data.map(spot => `/spot/${spot.slug}`)
       })
 
-      let arr2 =  axios.get('https://api.closetfinder.com/api/celebrity').then(resp => {
+      /*let arr2 =  await axios.get('https://api.closetfinder.com/api/celebrity').then(resp => {
         return resp.data.data.map(spot => `/celebrity/${spot.slug}`)
-      })
+      })*/
 
-      return arr
+      // return [...arr, ...arr2]
+
+      return arr;
     }
   },
 
@@ -121,7 +123,7 @@ export default {
   },
   elementUI: {
     components: [
-      'Button', 'DatePicker', 'Carousel', 'CarouselItem',
+      'Button', 'Carousel', 'CarouselItem',
       'Col', 'Row', 'Card', 'Image', 'Tag'
     ]
   },
@@ -129,9 +131,5 @@ export default {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: 'http://127.0.0.1:8000/api/'
     baseURL: 'https://api.closetfinder.com/api/'
-  },
-
-  device: {
-    refreshOnResize: true
   }
 }
