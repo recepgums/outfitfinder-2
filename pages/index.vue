@@ -16,7 +16,7 @@
     </div>
 
     <div v-if="nextPageLoading" class="text-center mb-5" style="font-size: 1.3rem">
-      loading...
+      {{loadingText}}
     </div>
   </div>
 </template>
@@ -42,7 +42,8 @@ export default {
   data() {
     return {
       nextPageLink:this.$axios.defaults.baseURL + 'spot?page=2',
-      nextPageLoading:false
+      nextPageLoading:false,
+      loadingText:'Loading...'
     }
   },
   async asyncData({$axios}) {
@@ -55,36 +56,28 @@ export default {
     }
   },
   methods: {
-    handleScroll () {
-      let bottomOfWindow = Math.max(
-        window.pageYOffset,
-        document.documentElement.scrollTop,
-        document.body.scrollTop) + window.innerHeight
-        ===
-        document.documentElement.offsetHeight
-
-      if (bottomOfWindow) {
-        this.nextPageLoading = true
-        this.getSpots();
-      }
-    },
    async getSpots (){
+     this.nextPageLoading = true
       await this.$axios.get(this.nextPageLink)
         .then(resp => {
           resp.data.data.forEach(item => this.spots.push(item));
+          if (!resp.data.links.next){
+            this.loadingText = 'Looks like you have seen all spots'
+          }
+
           this.nextPageLink = resp.data.links.next
           this.nextPageLoading = false
         })
     }
   },
-  created () {
-    if (process.client) {
-      window.addEventListener('scroll', this.handleScroll);
-    }
-  },
-  destroyed () {
-    if (process.client) {
-      window.removeEventListener('scroll', this.handleScroll);
+  mounted() {
+    window.onscroll = async () => {
+      if (
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 &&
+        !this.nextPageLoading
+      ) {
+        await this.getSpots()
+      }
     }
   }
 }
