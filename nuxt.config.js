@@ -11,7 +11,9 @@ export default {
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes'},
-      {name: 'format-detection', content: 'telephone=no'}
+      {name: 'format-detection', content: 'telephone=no'},
+      { hid: 'og-title', property: 'og:title', content: 'Closet Finder |  Identifying Celebrity Outfits' },
+      { hid: 'og-description', property: 'og:description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes' },
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
