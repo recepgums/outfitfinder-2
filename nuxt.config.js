@@ -99,7 +99,7 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     routes: async  () => {
-      let arr =  await axios.get('https://api.closetfinder.com/api/spot').then(resp => {
+      let arr =  await axios.get('https://api.closetfinder.com/api/spot?alll=true').then(resp => {
         return resp.data.data.map(spot => `/spot/${spot.slug}`)
       })
 
