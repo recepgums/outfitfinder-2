@@ -40,22 +40,20 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.spot.meta_description
+          content: this.spot?.meta_description ?? this.spot?.description
         },
 
-        { hid: 'og-title', property: 'og:title', content: this.spot?.meta_title ?? this.spot?.title },
-        { hid: 'og-description', property: 'og:description', content: this.spot?.meta_description ?? this.spot.description  },
-        { hid: 'og-url', property: 'og:url', content: 'https://closetfinder.com/'+this.$router.currentRoute?.fullPath  },
-        { hid: 'og-image', property: 'og:image', content: this.spot?.images[0]},
+        { hid: 'og:title', property: 'og:title', content: this.spot?.meta_title ?? this.spot?.title },
+        { hid: 'og:description', property: 'og:description', content: this.spot?.meta_description ?? this.spot.description  },
+        { hid: 'og:url', property: 'og:url', content: 'https://closetfinder.com/'+this.$router.currentRoute?.fullPath  },
+        { hid: 'og:image', property: 'og:image', content: this.spot?.images[0]},
 
 
-        { hid: 'twitter-title', property: 'twitter:title', content: this.spot?.meta_title ?? this.spot?.title },
-        { hid: 'twitter-description', property: 'twitter:description', content: this.spot?.meta_description ?? this.spot.description  },
-        { hid: 'twitter-url', property: 'twitter:url', content: 'https://closetfinder.com/'+this.$router.currentRoute?.fullPath  },
-        { hid: 'twitter-image', property: 'twitter:image', content: this.spot?.images[0]},
-        { hid: 'twitter-card', property: 'twitter:card', content: 'content="summary_large_image"'},
-
-
+        { hid: 'twitter:title', property: 'twitter:title', content: this.spot?.meta_title ?? this.spot?.title },
+        { hid: 'twitter:description', property: 'twitter:description', content: this.spot?.meta_description ?? this.spot.description  },
+        { hid: 'twitter:url', property: 'twitter:url', content: 'https://closetfinder.com/'+this.$router.currentRoute?.fullPath  },
+        { hid: 'twitter:image', property: 'twitter:image', content: this.spot?.images[0]},
+        { hid: 'twitter:card', property: 'twitter:card', content: 'content="summary_large_image"'},
       ],
     }
   },

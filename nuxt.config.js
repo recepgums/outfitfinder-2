@@ -13,7 +13,7 @@ export default {
       {hid: 'description', name: 'description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes'},
       {name: 'format-detection', content: 'telephone=no'},
       { hid: 'og-title', property: 'og:title', content: 'Closet Finder |  Identifying Celebrity Outfits' },
-      { hid: 'og-description', property: 'og:description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes' },
+      { hid: 'og-description', property: 'og:description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes' }
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
