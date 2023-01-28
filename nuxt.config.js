@@ -16,7 +16,7 @@ export default {
       { hid: 'og-description', property: 'og:description', content: 'Closet Finder identifies the outfits and make up products worn by celebrities and shows you where you can buy their clothes' }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon2.ico'},
       {rel: 'stylesheet', href: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css'},
       {
         crossorigin: "anonymous",
