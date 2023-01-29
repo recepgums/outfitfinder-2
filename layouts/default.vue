@@ -36,10 +36,10 @@
             <NuxtLink class="nav-link" to="/category/magazine">Magazine</NuxtLink>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+<!--        <form class="form-inline my-2 my-lg-0">
           <input v-model="searchKeywords" class="form-control mr-sm-2" type="search" placeholder="celebrity, dress name etc" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" @click="searchClicked">Search</button>
-        </form>
+        </form>-->
       </div>
     </nav>
     <nuxt/>

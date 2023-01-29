@@ -53,7 +53,7 @@ export default {
         { hid: 'twitter:description', property: 'twitter:description', content: this.spot?.meta_description ?? this.spot.description  },
         { hid: 'twitter:url', property: 'twitter:url', content: 'https://closetfinder.com/'+this.$router.currentRoute?.fullPath  },
         { hid: 'twitter:image', property: 'twitter:image', content: this.spot?.images[0]},
-        { hid: 'twitter:card', property: 'twitter:card', content: 'content="summary_large_image"'},
+        { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image'},
       ],
     }
   },
