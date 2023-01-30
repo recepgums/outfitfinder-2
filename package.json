@@ -32,6 +32,8 @@
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
+    "@egjs/flicking-plugins": "^3.1.0",
+    "@egjs/vue-flicking": "3.1.6",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@nuxt/image": "^0.7.1",
     "@nuxtjs/google-analytics": "^2.4.0",

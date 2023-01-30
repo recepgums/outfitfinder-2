@@ -31,23 +31,19 @@
             </div>
 
             <div class="px-2" style="position:relative;top: 0px">
-                <div class="row">
-                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
-                       v-for="product in spot?.products" :key="product.id">
-                    <ProductBiggerCard :product="product"/>
-                  </div>
-                </div>
-                <br>
-               <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
-                 <p class="text-muted">Buy for less</p>
-                 <hr>
-                 <div class="row">
-                   <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
-                        v-for="product in spot?.products" :key="product.id">
-                     <ProductBiggerCard :product="product?.suggestion_product"/>
-                   </div>
-                 </div>
-               </div>
+              <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true}">
+                <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
+                <span slot="viewport" class="flicking-arrow-prev"></span>
+                <span slot="viewport" class="flicking-arrow-next"></span>
+              </Flicking>
+              <br>
+              <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
+                <p class="text-muted">Buy for less</p>
+                <hr>
+                <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true }">
+                  <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
+                </Flicking>
+              </div>
             </div>
             <div class="col-12 text-right pr-5" style="position:absolute;bottom: 10px">
               <NuxtLink :to="`/category/${spot?.category?.slug}`" >
@@ -91,25 +87,17 @@
               <p v-html="spot?.description"></p>
             </div>
             <div class="px-2">
-              <client-only>
-                <div class="row">
-                  <div class="swiper-slide col-md-3 col-3" style="width: auto;margin-left: 8px"
-                       v-for="product in spot?.products" :key="product.id">
-                    <ProductBiggerCard :product="product"/>
-                  </div>
-                </div>
+                <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true }">
+                  <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
+                </Flicking>
                 <br>
                 <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
                   <p class="text-muted">Buy for less</p>
                   <hr>
-                  <div class="row">
-                    <div class="col-md-3 col-3" style="width: auto;margin-left: 8px"
-                         v-for="product in spot?.products" :key="product.id">
-                      <ProductBiggerCard :product="product?.suggestion_product"/>
-                    </div>
-                  </div>
+                  <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true,defaultIndex:1 }">
+                    <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
+                  </Flicking>
                 </div>
-              </client-only>
             </div>
             <div class="col-12 text-right mt-2">
               <NuxtLink :to="`/category/${spot?.category?.slug}`" >
@@ -130,6 +118,7 @@
 
 import Swiper, {Navigation, Pagination, Autoplay} from 'swiper'
 import 'swiper/swiper-bundle.min.css'
+import { Fade } from "@egjs/flicking-plugins";
 
 export default {
   name: 'OverViewCard',

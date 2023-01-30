@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div>
     <a style="color:#000;" target="_blank" rel="nofollow" :href="product?.affiliate_link">
         <div class="hero-image2"
              :lazy-background="product?.image_link"

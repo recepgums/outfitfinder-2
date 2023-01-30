@@ -1,8 +1,7 @@
 <template>
   <el-card v-if="spot" style="border-radius: 20px;padding: 0!important;" :body-style="{ padding: '0px',borderRadius:'30px',minHeight:'400px' }">
     <NuxtLink :to="`/spot/${spot.slug}`">
-      <div class="hero-image"
-           :lazy-background="spot.cover_image_link">
+      <div class="hero-image" :lazy-background="spot.cover_image_link">
         <div class="div-over-image-top">
           {{spot.celebrity.name}}
         </div>
@@ -11,7 +10,8 @@
             {{ spot.title }}
           </h2>
           <div class="row">
-            <ProductCard class="col-sm-4 col-4 my" :key="product.id" :product="product" v-for="product in spot.products"/>
+            <ProductCard :class=" spot.products.length < 4 ? 'col-sm-4 col-4' : 'col-sm-'+12/spot.products.length +' col-'+12/spot.products.length"
+                         :key="product.id" :product="product" v-for="product in spot.products"/>
           </div>
         </div>
       </div>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'OverViewCard',
   props: ['spot'],
