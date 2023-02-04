@@ -4,7 +4,8 @@
         <div class="hero-image2"
              :lazy-background="product?.image_link"
         />
-        <el-button size="small"  icon="el-icon-shopping-bag-1" round style="background-color: black;color:white">
+
+      <el-button size="small"  icon="el-icon-shopping-bag-1" round style="background-color: black;color:white">
           {{ product?.price }}
           {{ product?.currency }}
         </el-button>

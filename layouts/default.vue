@@ -33,7 +33,7 @@
             <NuxtLink class="nav-link" to="/category/nail">Nail</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/magazine">Magazine</NuxtLink>
+            <NuxtLink class="nav-link" to="/magazine">Magazine</NuxtLink>
           </li>
         </ul>
 <!--        <form class="form-inline my-2 my-lg-0">
