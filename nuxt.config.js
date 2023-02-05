@@ -108,17 +108,19 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     routes: async  () => {
-      let arr =  await axios.get('https://api.closetfinder.com/api/spot?alll=true').then(resp => {
+      let spots =  await axios.get('https://api.closetfinder.com/api/spot?alll=true').then(resp => {
         return resp.data.data.map(spot => `/spot/${spot.slug}`)
       })
 
-      /*let arr2 =  await axios.get('https://api.closetfinder.com/api/celebrity').then(resp => {
+      let celebrities =  await axios.get('https://api.closetfinder.com/api/celebrity?has_spot=').then(resp => {
         return resp.data.data.map(spot => `/celebrity/${spot.slug}`)
-      })*/
+      })
 
-      // return [...arr, ...arr2]
+      let blogs =  await axios.get('https://api.closetfinder.com/api/blog').then(resp => {
+        return resp.data.data.map(blog => `/magazine/${blog.slug}`)
+      })
 
-      return arr;
+      return [...spots, ...celebrities, ...blogs]
     }
   },
 
