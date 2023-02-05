@@ -5,13 +5,15 @@
       <MagazineDetailCard :magazine="magazine"></MagazineDetailCard>
     </div>
     <br>
-    <h2 class="blog-post">
-      Similar magazines
-    </h2>
-    <hr>
-    <div class="d-block container blog-post">
-      <div class="row">
-        <MagazineCard class="col-sm-12 col-md-4 my-1" v-for="(magazine, i) in relatedMagazine" :key="magazine.id" :magazine="magazine"></MagazineCard>
+    <div v-if="relatedMagazine?.length > 0">
+      <h2 class="blog-post">
+        Similar magazines
+      </h2>
+      <hr>
+      <div class="d-block container blog-post">
+        <div class="row">
+          <MagazineCard class="col-sm-12 col-md-4 my-1" v-for="(magazine, i) in relatedMagazine" :key="magazine.id" :magazine="magazine"></MagazineCard>
+        </div>
       </div>
     </div>
   </div>

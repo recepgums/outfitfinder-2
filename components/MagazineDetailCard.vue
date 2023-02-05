@@ -2,7 +2,7 @@
   <div class="blog-post">
     <h1 class="text-left">{{magazine?.title}}</h1>
     <p class="text-muted text-right">Date : {{magazine?.published_at}}</p>
-    <img :src="magazine?.cover_image_link" alt="Blog Image">
+    <img :src="magazine?.cover_image_link" :alt="magazine?.title" v-lazy-load>
     <p v-html="magazine?.description" />
 
     <div v-if="magazine?.spot">
@@ -21,7 +21,6 @@ export default {
   props:['magazine'],
   data(){
     return {
-
     }
   }
 }
