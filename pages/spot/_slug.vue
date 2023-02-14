@@ -9,7 +9,7 @@
       Similar spots
     </h2>
     <hr>
-    <div class="d-block container-md">
+    <div class="d-block container">
       <div class="row">
         <OverViewCard class="col-sm-12 col-md-4 my-1" v-for="(spot, i) in relatedSpots" :key="spot.id" :spot="spot"></OverViewCard>
       </div>
