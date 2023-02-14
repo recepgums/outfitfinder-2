@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div  :class="containerClass">
     <nav class="navbar navbar-expand-lg navbar-light">
       <NuxtLink class="navbar-brand" to="/">
         <h3 class="text-center">
@@ -50,12 +50,21 @@
 export  default {
   data(){
     return {
-      searchKeywords:''
+      searchKeywords:'',
+      containerClass:'container'
     }
   },
+  mounted() {
+    this.checkWindowSize();
+    window.addEventListener('resize', this.checkWindowSize);
+  },
   methods:{
-    searchClicked(){
-      alert(this.searchKeywords)
+    checkWindowSize() {
+      if (window.innerWidth < 576) {
+        this.containerClass = 'container-fluid px-1';
+      } else {
+        this.containerClass = 'container';
+      }
     }
   }
 }

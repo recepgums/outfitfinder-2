@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <CelebrityCard class="text-center" :celebrity="celebrity"/>
+    <CelebrityCard2 class="mx-auto" :celebrity="celebrity"/>
     <div class="row" v-if="spots.length > 0">
       <OverViewCard class="col-sm-12 col-md-4 my-1" v-for="(spot, i) in spots" :key="spot.id" :spot="spot"></OverViewCard>
     </div>

@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <div class="row px-2">
-      <CelebrityCard class="col-6 col-md-4" :celebrity="celebrity"
+      <CelebrityCard2 class="col-6 col-md-4" :celebrity="celebrity"
                      v-for="celebrity in celebrities"
                      :key="celebrity.id"
       />
