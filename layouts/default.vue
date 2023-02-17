@@ -21,19 +21,39 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/celebrity">Celebrities</NuxtLink>
+            <NuxtLink class="nav-link" to="/celebrity">
+              <el-button type="info" plain>
+                Celebrities
+              </el-button>
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/outfits">Outfits</NuxtLink>
+            <NuxtLink class="nav-link" to="/category/outfits">
+              <el-button type="info" plain>
+                Outfits
+              </el-button>
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/make-up">Make Up</NuxtLink>
+            <NuxtLink class="nav-link" to="/category/make-up">
+                <el-button type="info" plain>
+                  Make Up
+                </el-button>
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/nail">Nail</NuxtLink>
+            <NuxtLink class="nav-link" to="/category/nail">
+              <el-button type="info" plain>
+                Nail
+              </el-button>
+            </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/magazine">Magazine</NuxtLink>
+            <NuxtLink class="nav-link" to="/magazine">
+              <el-button type="info" plain>
+                Magazine
+              </el-button>
+            </NuxtLink>
           </li>
         </ul>
 <!--        <form class="form-inline my-2 my-lg-0">
@@ -124,5 +144,8 @@ html {
 .nuxt-link-exact-active{
   color: #f056a9ba!important;
   font-weight: bold;
+}
+.el-button--danger {
+  /*background-color: #f056a9ba!important;*/
 }
 </style>

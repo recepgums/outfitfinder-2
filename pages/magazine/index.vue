@@ -3,7 +3,7 @@
   <div>
     <div class="container ">
       <div class="row">
-        <MagazineCard class="col-sm-12 col-md-4 my-1" v-for="(magazine, i) in blogs" :key="magazine.id" :magazine="magazine"></MagazineCard>
+        <MagazineCard class="col-sm-12 col-md-3 my-1" v-for="(magazine, i) in blogs" :key="magazine.id" :magazine="magazine"></MagazineCard>
       </div>
     </div>
 

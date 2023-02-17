@@ -41,7 +41,8 @@ export default {
   left: 0px;
   top: 0px;
   z-index: 3;
-  background-color: black;
+  /*background-color: #ff00c2d1;*/
+  background-color: #000;
   border-radius: 20px 0 20px 0;
   padding: 5px;
   color: #FFFFFF;

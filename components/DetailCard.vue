@@ -32,7 +32,7 @@
             </div>
 
             <div class="px-2" style="position:relative;top: 0px">
-              <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true}">
+              <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1}">
                 <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
                 <span slot="viewport" class="flicking-arrow-prev"></span>
                 <span slot="viewport" class="flicking-arrow-next"></span>
@@ -41,7 +41,7 @@
               <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
                 <p class="text-muted">Buy for less</p>
                 <hr>
-                <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1,circular:true }">
+                <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 1}">
                   <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
                 </Flicking>
               </div>
@@ -89,14 +89,14 @@
               <p v-html="spot?.description"></p>
             </div>
             <div class="px-2">
-                <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 0,circular:true }">
+                <Flicking :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 0 }">
                   <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
                 </Flicking>
                 <br>
                 <div v-if="spot?.products.filter(item => item.suggestion_product).length > 0">
                   <p class="text-muted">Buy for less</p>
                   <hr>
-                  <Flicking   :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 0,circular:true,defaultIndex:1 }">
+                  <Flicking :options="{ renderOnlyVisible: true,align:'prev',defaultIndex: 0,defaultIndex:1 }">
                     <ProductBiggerCard :product="product"  v-for="product in spot?.products" :key="product.id"/>
                   </Flicking>
                 </div>
