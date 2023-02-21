@@ -28,30 +28,16 @@
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/outfits">
-              <el-button type="info" plain>
-                Outfits
-              </el-button>
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/make-up">
-                <el-button type="info" plain>
-                  Make Up
-                </el-button>
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
-            <NuxtLink class="nav-link" to="/category/nail">
-              <el-button type="info" plain>
-                Nail
-              </el-button>
-            </NuxtLink>
-          </li>
-          <li class="nav-item">
             <NuxtLink class="nav-link" to="/magazine">
               <el-button type="info" plain>
                 Magazine
+              </el-button>
+            </NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/category/outfits">
+              <el-button type="info" plain>
+                Outfits
               </el-button>
             </NuxtLink>
           </li>

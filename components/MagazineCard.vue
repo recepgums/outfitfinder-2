@@ -5,7 +5,9 @@
     >
     <div class="card-content">
       <h2>{{ magazine?.title }}</h2>
-      <p style="text-decoration: none;" v-html="magazine?.description.substring(0,150)" class="py-0"/>
+      <p style="text-decoration: none;" class="py-0">
+        {{magazine?.summary}}
+      </p>
     </div>
   </NuxtLink>
 
