@@ -5,9 +5,9 @@
       <DetailCard :spot="spot"></DetailCard>
     </div>
     <br>
-    <h2>
+    <h3>
       Similar spots
-    </h2>
+    </h3>
     <hr>
     <div class="d-block container">
       <div class="row">

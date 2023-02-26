@@ -28,7 +28,7 @@ export default {
 <style>
 .card {
   width: 18rem;
-  margin: 20px;
+  /*margin: 20px;*/
   border-radius: 10%;
   border: none;
   box-shadow: 0 5px 15px rgba(0,0,0,.3);

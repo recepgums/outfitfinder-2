@@ -9,9 +9,9 @@
           {{spot.celebrity.name}}
         </div>
         <div class="div-over-image-bottom">
-          <h2 style="font-size: 1rem">
+          <h3 style="font-size: 1rem">
             {{ spot.title }}
-          </h2>
+          </h3>
           <div class="row">
             <ProductCard :class=" spot.products.length < 4 ? 'col-sm-4 col-4' : 'col-sm-'+12/spot.products.length +' col-'+12/spot.products.length"
                          :key="product.id" :product="product" v-for="product in spot.products"/>

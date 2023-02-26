@@ -1,9 +1,9 @@
 <!-- Please remove this file from your project -->
 <template>
   <div>
-    <div class="container ">
-      <div class="row">
-        <MagazineCard class="col-sm-12 col-md-3 my-1" v-for="(magazine, i) in blogs" :key="magazine.id" :magazine="magazine"></MagazineCard>
+    <div class="container d-flex justify-content-center">
+      <div class="row text-center">
+        <MagazineCard class="col-sm-12 col-md-4 my-2" v-for="(magazine, i) in blogs" :key="magazine.id" :magazine="magazine"></MagazineCard>
       </div>
     </div>
 
